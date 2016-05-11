@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
 
 	function leftScrollLine() {
 		$(".left_anchor_full").click(function () {
-//Необходимо прокрутить в конец страницы
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			var height = 0;
 			$("body").animate({"scrollTop":height},500);
 		});
@@ -49,4 +49,37 @@ window.onscroll = function() {
 		leftLineTop.hide();
 	}
 
+}
+
+function addBookMark(a) {
+
+	var title = document.title;
+	var url = document.location;
+
+	try {
+		// Internet Explorer
+		window.external.AddFavorite(url, title);
+	}
+
+	catch (e) {
+		try {
+			// Mozilla
+			window.sidebar.addPanel(title, url, "");
+		}
+		catch (e) {
+			// Opera
+			if (typeof(opera) == "object" || window.sidebar) {
+				a.rel = "sidebar";
+				a.title = title;
+				a.url = url;
+				a.href = url;
+				return true;
+			}
+			else {
+				// Unknown
+				alert('РќР°Р¶РјРёС‚Рµ Ctrl-D С‡С‚РѕР±С‹ РґРѕР±Р°РІРёС‚СЊ СЃС‚СЂР°РЅРёС†Сѓ РІ Р·Р°РєР»Р°РґРєРё');
+			}
+		}
+	}
+	return false;
 }

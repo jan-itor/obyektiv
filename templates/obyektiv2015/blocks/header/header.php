@@ -1,8 +1,6 @@
-<?
-if ($_SERVER["REMOTE_ADDR"] == "194.12.124.17") {?>
-    <div class="left_anchor_full"> <nobr id="stl_text" class="">Наверх</nobr></div>
-<?}?>
 
+
+    <div class="left_anchor_full"> <nobr id="stl_text" class="">Наверх</nobr></div>
 
 <!--HEADER-->
 <header class="header">

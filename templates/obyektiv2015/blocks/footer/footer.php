@@ -4,7 +4,7 @@
         <span class="footer__info-age">16+</span> 
         <div class="rss_footer">
             <a href="/rss.php" title="rss"><img src="/rss.jpg" alt="rss" /></a>
-            
+                <a rel="sidebar" href="#" onclick="addBookMark(this)"><img src="/images/add_bookmark.png" alt="Добавить в закладки"></a>
             <a href="/o-nas" class="alg_bottom_link">О нас</a>
             <a href="/contact" class="alg_bottom_link">Контакты</a>
             
