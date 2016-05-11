@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="2.5" type="template" client="site">
+	<name>obyektiv2015</name>
+	<creationDate>2015</creationDate>
+	<author>Alexey Litovchenko</author>
+	<authorEmail>web2easy@outlook.com</authorEmail>
+	<authorUrl>http://vk.com/web2easy</authorUrl>
+	<copyright>Copyright (C) 2015 Alexey Litovchenko</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<version>1.0</version>
+	<description>"Объектив 2015" - эксклюзивный шаблон для ежедневнаой информационной газеты "Объектив" от веб-студии growwweb.com</description>
+	<positions>
+        <position>after_content</position>
+        <position>breadcrumbs</position>
+		<position>logo</position>
+		<position>links</position>
+		<position>search</position>
+		<position>topmenu</position>
+		<position>right</position>
+		<position>footmenu</position>
+		<position>copy</position>
+		<position>navigaror</position>
+		<position>navigaror2</position>
+		<position>navigaror3</position>
+        <position>navigaror4</position>
+        <position>video_block</position>
+	</positions>
+</extension>

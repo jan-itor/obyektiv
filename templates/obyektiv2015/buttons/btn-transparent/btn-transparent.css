@@ -1,0 +1,12 @@
+/*BTN-TRANSPARENT*/
+
+.btn-transparent {
+	border-width: 1px;
+	border-color: #fff;
+	border-style: solid;
+	line-height: 40px;
+	color: #fff;
+	font-size: 14px;
+	padding: 0 26px;
+	display: inline-block;
+}

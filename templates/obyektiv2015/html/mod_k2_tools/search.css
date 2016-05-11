@@ -1,0 +1,25 @@
+.search {
+	height: 94px;
+	background: #00bcd4;
+	width: 100%;
+}
+
+.search input.inputbox {
+	height: 36px;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	position: relative;
+	top: 50%;
+	border: 1px solid #bbdefb;
+	padding: 0 10px;
+}
+
+.search .k2SearchBlockForm {
+	height: 100%;
+}

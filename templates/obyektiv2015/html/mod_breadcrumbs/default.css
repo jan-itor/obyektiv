@@ -1,0 +1,38 @@
+.breadcrumb {
+	display: block;
+	margin: -30px auto 30px;
+	width: 1120px;
+}
+
+.breadcrumb::after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.breadcrumb li {
+	display: inline-block;
+	float: left;
+}
+
+.breadcrumb a {
+	display: inline-block;
+	color: #888888;
+	text-decoration: underline;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.breadcrumb .active span {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	color: #888888;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.divider {
+	padding: 0 .1em;
+}

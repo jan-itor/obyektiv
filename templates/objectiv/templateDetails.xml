@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="template" client="site">
+	<name>objectiv</name>
+	<creationDate>16.12.2014</creationDate>
+	<author>Growwweb</author>
+	<authorEmail>growwweb@gmail.com</authorEmail>
+	<authorUrl>http://growwweb.com</authorUrl>
+	<copyright>Copyright (C) 2014 Made by Growwweb. All rights reserved.</copyright>
+	<version>1.0</version>
+	<description>Объектив - Ежедневная информационная газета</description>
+
+	<files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>javascript</folder>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.jpg</filename>
+		<filename>favicon.ico</filename>
+	</files>
+
+	<positions>
+		<position>logo</position>
+		<position>links</position>
+		<position>search</position>
+		<position>topmenu</position>
+		<position>right</position>
+		<position>footmenu</position>
+		<position>copy</position>
+	</positions>
+</extension>

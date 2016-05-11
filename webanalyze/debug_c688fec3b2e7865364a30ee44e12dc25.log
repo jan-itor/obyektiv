@@ -1,0 +1,60 @@
+2016-03-09 15:21:04 Start Scan Process ver. 2.7 [scanner ver. 2.2]
+2016-03-09 15:21:04 Change Time limit: TRUE , Value: 7200
+2016-03-09 15:21:04 Current Memory limit: 256M
+2016-03-09 15:21:04 OS info: Linux (Linux shared-16.smartape.ru 2.6.32-531.29.2.lve1.3.11.1.el6.x86_64 #1 SMP Thu Dec 18 06:49:17 EST 2014 x86_64)
+2016-03-09 15:21:04 PHP ver: 5.4.44
+2016-03-09 15:21:04 Domain: http://obyektiv.press
+2016-03-09 15:21:04 Scan path: /var/www/user32812/data/www/obyektiv.press/
+2016-03-09 15:21:04 Session report key: 9349be16f2081b801451e358b84c80dd
+2016-03-09 15:21:04 Report URL: https://www.siteguarding.com/antivirus/viewreport?report_id=9349be16f2081b801451e358b84c80dd
+2016-03-09 15:21:04 TMP folder: /var/www/user32812/data/www/obyektiv.press/webanalyze/
+2016-03-09 15:21:07 -----------------------------------------------------------------------
+2016-03-09 15:21:07 Collecting info about the files [METHOD 2]
+2016-03-09 15:21:07 Excluded Folders: 0
+2016-03-09 15:21:14 Save collected file_list
+2016-03-09 15:21:16 Total files: 5897
+2016-03-09 15:21:16 -----------------------------------------------------------------------
+2016-03-09 15:21:16 Start - Pack with SSH
+2016-03-09 15:22:22 Pack file: /var/www/user32812/data/www/obyektiv.press/webanalyze/pack_c688fec3b2e7865364a30ee44e12dc25.tar
+2016-03-09 15:22:24 Pack file is 7.46Mb
+2016-03-09 15:22:24 -----------------------------------------------------------------------
+2016-03-09 15:22:24 Start - Send Packed files to SG server
+2016-03-09 15:22:24 Pack URL: /webanalyze/pack_c688fec3b2e7865364a30ee44e12dc25.tar
+2016-03-09 15:22:24 CURL CURLOPT_INFILE: /var/www/user32812/data/www/obyektiv.press/webanalyze/pack_c688fec3b2e7865364a30ee44e12dc25.tar
+2016-03-09 15:22:24 CURL CURLOPT_INFILESIZE: 7819352
+2016-03-09 15:22:40 CURL info - Array
+(
+    [url] => http://www.siteguarding.com/ext/antivirus/index.php?action=uploadfiles_ver2
+    [content_type] => text/html
+    [http_code] => 200
+    [header_size] => 236
+    [request_size] => 240
+    [filetime] => -1
+    [ssl_verify_result] => 0
+    [redirect_count] => 0
+    [total_time] => 15.568803
+    [namelookup_time] => 0.004234
+    [connect_time] => 0.188713
+    [pretransfer_time] => 0.188974
+    [size_upload] => 7820105
+    [size_download] => 0
+    [speed_download] => 0
+    [speed_upload] => 502293
+    [download_content_length] => 0
+    [upload_content_length] => 7820105
+    [starttransfer_time] => 0.373595
+    [redirect_time] => 0
+    [certinfo] => Array
+        (
+        )
+
+    [primary_ip] => 185.72.156.129
+    [primary_port] => 80
+    [local_ip] => 188.127.239.149
+    [local_port] => 43639
+    [redirect_url] => 
+)
+
+2016-03-09 15:22:40 Pack file sent for analyze - OK
+2016-03-09 15:22:43 -----------------------------------------------------------------------
+2016-03-09 15:22:43 Start - Report generating

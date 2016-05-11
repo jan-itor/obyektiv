@@ -1,0 +1,43 @@
+/*GRID*/
+
+.grid {
+	width: 1240px;
+	margin: 0 auto 47px;
+	position: relative;
+}
+.grid--internal {
+	background-color: #fff;
+}
+.grid__row {
+	width: 100%;
+	clear: both;
+}
+
+.grid__item {
+	float: left;
+}
+
+.grid__item--big {
+	width: 921px;
+	padding: 0 10px;
+}
+
+.grid__item--small {
+    padding: 0 0 0 10px;
+    width: 309px;
+}
+
+.grid__item--news {
+    background-color: #075095;
+    margin: 10px 0 0 10px;
+    padding: 16px;
+}
+
+.grid__title {
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 42px;
+	text-transform: uppercase;
+	margin-bottom: 14px;
+}

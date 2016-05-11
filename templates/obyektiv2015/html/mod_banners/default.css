@@ -1,0 +1,21 @@
+.banneritem:first-child {
+    padding: 10px 0 0;
+}
+/*.banneritem {
+    padding: 5px 0 0;
+}*/
+.banneritem a{
+	display: block;
+	width: 100%;
+
+}
+.banneritem img{
+	width: 100%;
+	height: auto;
+}
+.bannergroup {
+    margin-top: -200px;
+}
+.bannergroup .banneritem:first-child {
+      position: relative;
+}

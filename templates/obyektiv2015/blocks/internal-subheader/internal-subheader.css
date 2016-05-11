@@ -1,0 +1,16 @@
+/*INTERNAL-SUBHEADER*/
+.internal-subheader {
+	width: 100%;
+	line-height: 300px;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+	font-weight: 700;
+	font-size: 73px;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

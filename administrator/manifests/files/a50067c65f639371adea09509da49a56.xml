@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="file" method="upgrade">
+    <name>Rusifikator SIG Pro</name>
+    <author>JoomLang</author>
+    <authorEmail>pochta@joomlang.ru</authorEmail>
+    <authorUrl>http://www.joomlang.ru</authorUrl>
+    <creationDate>29/09/2014</creationDate>
+    <copyright>Copyright © 2014 www.joomlang.ru. Все права защищены.</copyright>
+    <license>http://www.joomlang.ru/license.html</license>
+    <version>3.0.7</version>
+    <description>
+	&lt;h1&gt;Русификатор Simple Image Gallery Pro&lt;/h1&gt;&#13;
+	&lt;hr/&gt;&#13;
+	</description>
+	<scriptfile>script.php</scriptfile>
+    <fileset></fileset>
+	<updateservers>
+		<server type="collection" priority="1" name="Rusifikatory JL">http://update.joomlang.ru/manifest/spisok.xml</server>
+	</updateservers>
+</extension>
