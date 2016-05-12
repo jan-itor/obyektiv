@@ -11,6 +11,11 @@
 <!--jquery.sticky-kit-->
 <script src="<?php echo $baseUrl; ?>/vendor/jquery.sticky-kit/jquery.sticky-kit.min.js"></script>
 
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
+<script type="text/javascript">
+    VK.init({apiId: 5458810, onlyWidgets: true});
+</script>
+
 <!--фикс кривого модуля формы для генерации подписей к пунктам меню-->
 <script src="<?php echo $baseUrl; ?>/blocks/header/header.js" ></script>
 <script src="<?php echo $baseUrl; ?>/blocks/internal-subheader/internal-subheader.js"></script>

@@ -7,7 +7,8 @@
                 <a rel="sidebar" href="#" onclick="addBookMark(this)"><img src="/images/add_bookmark.png" alt="Добавить в закладки"></a>
             <a href="/o-nas" class="alg_bottom_link">О нас</a>
             <a href="/contact" class="alg_bottom_link">Контакты</a>
-            
+            <a href="/contact#b2jmoduleid_103" class="alg_bottom_link">Предоложить новость</a>
+
         </div>
 
         <div class="copy_txt">Разрешается любое неискаженное цитирование материалов ресурса.

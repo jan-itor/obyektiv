@@ -54,7 +54,8 @@ class JConfig {
     public $unicodeslugs = '0';
     public $feed_limit = '20';
     public $log_path = '/home/n/nep4uku/obyektiv.press/public_html/logs';
-    public $tmp_path = '/home/n/nep4uku/obyektiv.press/public_html/tmp';
+
+    public $tmp_path = '/var/www/obyektiv.dev/public_html/tmp';
     public $lifetime = '99';
     public $session_handler = 'database';
     public $memcache_persist = '1';

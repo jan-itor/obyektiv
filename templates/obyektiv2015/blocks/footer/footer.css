@@ -43,6 +43,11 @@
 	text-decoration: underline;
 	color: inherit;
 }
+
+.rss_footer{
+	width: 120%;
+}
+
 .rss_footer img {
     width:43px;
 }

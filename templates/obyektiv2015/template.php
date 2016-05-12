@@ -126,6 +126,53 @@ if (!$isHome)
                     <?php require __DIR__ . '/blocks/social/social.php'; ?>
 
                 </div>
+
+                <div class="vidgetPoll">
+                    <!--<iframe allowtransparency="true" frameborder="no" scrolling="auto" height="850" width="308" src="http://poll.ru/1tittm"></iframe>-->
+                    <form method="post" action="http://www.rupoll.com/vote.php">
+                        <h3>За кого Вы отдадите свой голос на предварительном голосовании партии "Единая Россия" 22 мая 2016г.?</h3>
+                                    <input type="hidden" name="id" value="1">';
+      >                             <input type='radio' name='vote' value='1'> Белик Дмитрий Анатольевич
+                                    <input type='radio' name='vote' value='2'> Вертий Наталья Анатольевна<
+                                    <input type='radio' name='vote' value='3'> Жбанков Юрий Александрович<
+                                    <input type='radio' name='vote' value='4'> Кашанская Юлия Константиновна>
+                                    <input type='radio' name='vote' value='5'> Кириченко Владимир Владимирович<>
+                                    <input type='radio' name='vote' value='6'> Колесников Борис Дмитриевич
+                                    <input type='radio' name='vote' value='7'> Колмагоров Александр Алексеевич
+                                    <input type='radio' name='vote' value='8'> Кузьмина Ольга Александровна
+                                    <input type='radio' name='vote' value='9'> Лисейцев Сергей Алексеевич
+                                    <input type='radio' name='vote' value='10'> Мишин Максим Анатольевич
+                                    <input type='radio' name='vote' value='11'> Мудрецова Светлана Александровна
+                                    <input type='radio' name='vote' value='12'> Осташко Руслан Станиславович
+                                    <input type='radio' name='vote' value='13'> Плотка Владимир Григорьевич
+                                    <input type='radio' name='vote' value='14'> Поддубный Григорий Александрович
+                                    <input type='radio' name='vote' value='15'> Полищук Александра Александровна
+                                    <input type='radio' name='vote' value='16'> Романова Олесия Александровна
+                                    <input type='radio' name='vote' value='17'> Солдатова Елена Михайловна
+                                    <input type='radio' name='vote' value='18'> Халайчев Евгений Георгиевич
+                                    <input type='radio' name='vote' value='19'> Шкаплеров Антон Николаевич
+                                    <input type='button' value='  Голосовать !'>
+                    </form>
+
+                    <!--<div id="hypercomments_widget"></div>
+                    <script type="text/javascript">
+                        _hcwp = window._hcwp || [];
+                        _hcwp.push({widget:"Stream", widget_id: 75078});
+                        (function() {
+                            if("HC_LOAD_INIT" in window)return;
+                            HC_LOAD_INIT = true;
+                            var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+                            var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+                            hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/75078/"+lang+"/widget.js";
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(hcc, s.nextSibling);
+                        })();
+                    </script>
+                    <a href="http://hypercomments.com" class="hc-link" title="comments widget">comments powered by HyperComments</a>-->
+
+                </div>
+
+
                 <div class="grid__item grid__item--big">
 
                     <!--JOOMLA MODULE: navigaror3-->

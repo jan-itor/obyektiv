@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
     
     <a href="/video" class="alg_all_video">Все видео</a>
     
-    <div>
+    <div class="alg_video_items">
     <?foreach($items as $arItem):?>
         <div class="alg_video_item">
             <a href="<?=$arItem->link;?>" class="post__lnk" style="background-image:url('<?=$arItem->imageLarge;?>');">

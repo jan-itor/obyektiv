@@ -1,17 +1,19 @@
 <?php
 
-    require  'config.php';
+    //require  'config.php';
 
     if (!empty($_GET['code'])){
 
-        // вконтакт присылает нам код        
+        /*$vkontakteApplicationId = '5458911';
+        $vkontakteKey = '2V7mdHPjk52GiiKO8PFo';*/
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ        
         $vkontakteCode=$_GET['code'];
         
-        // получим токен 
-        $tokenNeed = "https://oauth.vk.com/access_token?client_id=$vkontakteApplicationId&client_secret=$vkontakteKey&code=$vkontakteCode&redirect_uri=http://obyektiv.press/vk_poster/connect.php";
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
+        $tokenNeed = "https://oauth.vk.com/access_token?client_id=$vkontakteApplicationId&client_secret=$vkontakteKey&code=$vkontakteCode&redirect_uri=http://obyektiv.dev/vk_poster/connect.php";
         $sUrl = "https://api.vk.com/oauth/access_token?client_id=$vkontakteApplicationId&client_secret=$vkontakteKey&code=$vkontakteCode";
         //print_r($tokenNeed);
-// создадим объект, содержащий ответ сервера Вконтакте, который приходит в формате JSON
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ JSON
         $oResponce = json_decode(file_get_contents($tokenNeed));
           print_r($oResponce);
         $fp = fopen('token.txt', 'w');
@@ -21,4 +23,4 @@
 }
 
 ?>
-<a href="http://api.vk.com/oauth/authorize?client_id=<?=$vkontakteApplicationId?>&scope=wall,offline,messages,ads,photos&redirect_uri=https://oauth.vk.com/blank.html&response_type=token">Auth VK</a>
+<a href="http://api.vk.com/oauth/authorize?client_id=5458911&scope=wall,offline,messages,ads,photos&redirect_uri=https://oauth.vk.com/blank.html&response_type=token">Auth VK</a>

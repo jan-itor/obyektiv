@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="<?php echo $current_path . $current_block_name . '.css'; ?>">
 
         <figure class="social">
-            <h3 class="social__title">Мы в социальных сетях</h3>
+            <h3 class="social__title">Читайте нас в соцсетях</h3>
             <a href="http://vk.com/obyektivsu" class="social__lnk social__lnk--vk" target="_blank"></a>
             <a href="https://www.facebook.com/obyektive" class="social__lnk social__lnk--fb" target="_blank"></a>
             

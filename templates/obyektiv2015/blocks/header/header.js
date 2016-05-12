@@ -11,7 +11,6 @@ jQuery(document).ready(function ($) {
 
 	function leftScrollLine() {
 		$(".left_anchor_full").click(function () {
-//���������� ���������� � ����� ��������
 			var height = 0;
 			$("body").animate({"scrollTop":height},500);
 		});
@@ -32,6 +31,7 @@ jQuery( window ).load(function() {
 					.removeAttr("target");
 		$("div.gsLinks").remove();
 		$('.gsAddInfo2').remove();
+		$('.poll-links').remove();
 	}
 
 	weatherEdit();
