@@ -290,12 +290,17 @@ div.itemHeader span.itemDateCreated, div.catItemHeader span.catItemDateCreated {
     margin-top:5px;
 }
 
+.topNewsHideText{
+    overflow: hidden;
+    height: 68px;
+}
+
 .left_anchor_full {
     display: none;
     position: fixed;
     z-index: 100;
     float: left;
-    width: 100px;
+    width: 60px;
     height: 100%;
     opacity: 0.5;
     cursor: pointer;
@@ -308,11 +313,65 @@ div.itemHeader span.itemDateCreated, div.catItemHeader span.catItemDateCreated {
 nobr#stl_text {
     height: 14px;
     display: block;
-    margin: 10px 20px;
+    margin: 10px -2px;
     padding-left: 20px;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
     color: #45688E;
     background: url(/images/toplink.gif) no-repeat;
     background-position: 3px 5px;
+}
+
+.poll {
+    background-color: rgb(243, 243, 243); !important;
+}
+
+.poll-links {
+    display: none;
+}
+.simpleVoteBlock{
+    border-width: 1px;
+    border-color: #fff;
+    border-style: solid;
+    line-height: 40px !important;
+    color: #fff !important;
+    font-size: 14px;
+    padding: 0 26px;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.simpleVoteBlock.interest{
+    background:#075095 ;
+}
+
+.simpleVoteBlock.interest:hover{
+    background: #0aa1ff;
+}
+
+.simpleVoteBlock.nInterest{
+    background: #b90000;
+}
+.simpleVoteBlock.nInterest:hover{
+    background: #ff0000;
+}
+
+.simpleVoteBlock.notActual{
+    background: #aba313;
+}
+.simpleVoteBlock.notActual:hover{
+    background: #fff718;
+}
+
+.simpleVoteBlock.actual{
+    background: #01ab56;
+}
+.simpleVoteBlock.actual:hover{
+    background: #01ff88;
+}
+.poll-links {
+    display: none !important;
+}
+.imgErrorPic {
+    margin-left: 16%;
 }

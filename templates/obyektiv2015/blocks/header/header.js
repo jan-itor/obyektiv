@@ -31,7 +31,6 @@ jQuery( window ).load(function() {
 					.removeAttr("target");
 		$("div.gsLinks").remove();
 		$('.gsAddInfo2').remove();
-		$('.poll-links').remove();
 	}
 
 	weatherEdit();
