@@ -11,8 +11,8 @@
 defined('_JEXEC') or die;
 ?>
 <?if ($module->id == 111):?>
-    
-    <a href="/video" class="alg_all_video">Все видео</a>
+
+	<!--<a href="/video" class="alg_all_video">Все видео</a>-->
     
     <div class="alg_video_items">
     <?foreach($items as $arItem):?>

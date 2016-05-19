@@ -300,7 +300,7 @@ div.itemHeader span.itemDateCreated, div.catItemHeader span.catItemDateCreated {
     position: fixed;
     z-index: 100;
     float: left;
-    width: 60px;
+    width: 55px;
     height: 100%;
     opacity: 0.5;
     cursor: pointer;
@@ -309,17 +309,21 @@ div.itemHeader span.itemDateCreated, div.catItemHeader span.catItemDateCreated {
 .left_anchor_full:hover {
     background: #E1E7ED;
 }
-
+.left_anchor_img{
+    background: url(/images/toplink.gif) no-repeat;
+    background-position: 3px 5px;
+    width: 20px;
+    margin-left: 11px;
+    height: 15px;
+}
 nobr#stl_text {
     height: 14px;
     display: block;
-    margin: 10px -2px;
+    margin: 14px -14px;
     padding-left: 20px;
     font-weight: bold;
     font-size: 11px;
     color: #45688E;
-    background: url(/images/toplink.gif) no-repeat;
-    background-position: 3px 5px;
 }
 
 .poll {
@@ -329,6 +333,11 @@ nobr#stl_text {
 .poll-links {
     display: none;
 }
+
+.simpleVoteBlockContainer {
+    text-align: center;
+}
+
 .simpleVoteBlock{
     border-width: 1px;
     border-color: #fff;
@@ -339,7 +348,7 @@ nobr#stl_text {
     padding: 0 26px;
     display: inline-block;
     cursor: pointer;
-    margin-left: 10px;
+    margin: 0px 5px;
 }
 .simpleVoteBlock.interest{
     background:#075095 ;
@@ -374,4 +383,158 @@ nobr#stl_text {
 }
 .imgErrorPic {
     margin-left: 16%;
+}
+
+/* soical.css*/
+.social {
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    border-top: 1px solid #fff;
+}
+
+.social__title {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 42px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.social__lnk {
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    width: 45px;
+    height: 24px;
+    float: left;
+}
+
+.ya-share2__container_size_m .ya-share2__icon {
+    height: 34px;
+    width: auto;
+    min-width: 34px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.ya-share2__counter:before {
+    display: none;
+}
+.ya-share2__item_service_vkontakte .ya-share2__icon:after {
+    content: "Вконтакте";
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    top: 6px;
+    margin-left: 27px;
+    margin-right: 10px;
+}
+
+
+.ya-share2__item_service_facebook .ya-share2__icon:after {
+    content: "Facebook";
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    top: 6px;
+    margin-left: 27px;
+    margin-right: 10px;
+}
+
+
+.ya-share2__item_service_odnoklassniki .ya-share2__icon:after {
+    content: "Одноклассники";
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    top: 6px;
+    margin-left: 27px;
+    margin-right: 10px;
+}
+
+
+.ya-share2__item_service_twitter .ya-share2__icon:after {
+    content: "Twitter";
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    top: 6px;
+    margin-left: 27px;
+    margin-right: 10px;
+}
+
+
+.ya-share2__item_service_gplus .ya-share2__icon:after {
+    content: "Google+";
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    top: 6px;
+    margin-left: 27px;
+    margin-right: 10px;
+}
+
+
+
+
+
+.social__lnk--vk {
+    background-image: url("/images/social/vk.png");
+    height: 18px;
+    position: relative;
+    top: 5px;
+}
+ul.ya-share2__list.ya-share2__list_direction_horizontal {
+    margin-left:0px;
+}
+.ya-share2__badge {
+    border-radius:0px;
+}
+
+span.ya-share2__counter.ya-share2__counter_visible {
+    color: #fff;
+    position: relative;
+    top: 1px;
+    margin-left: -7px;
+    font-size: 15px;
+}
+
+.social__lnk--fb {
+    background-image: url("/images/social/fb.png");
+}
+
+.social__lnk--gp {
+    background-image: url("/images/social/gp.png");
+}
+.social__lnk--tw {
+    background-image: url("/images/social/tw.png");
+}
+.social__lnk--od {
+    background-image: url("/images/social/od.png");
+}
+.social__lnk--yt {
+    background-image: url("/images/social/yt.png");
+}
+
+.viewCntLikes{
+    background: url("/images/like.png") left top no-repeat;
+    background-size: contain;
+    padding-left: 23px;
+}
+
+.viewCntReposts{
+    background: url("/images/repost.png") left top no-repeat;
+    background-size: contain;
+    padding-left: 23px;
+}
+
+.viewCntComments{
+    background: url("/images/comment.png") left top no-repeat;
+    background-size: contain;
+    padding-left: 23px;
 }

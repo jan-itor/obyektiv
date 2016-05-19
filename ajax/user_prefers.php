@@ -34,9 +34,6 @@ if(sizeof($_POST) > 0){
     $_COOKIE["articles"][$id] = $id;
     $array = $_COOKIE["articles"];
     setcookie("articles", $array, time() + 360000);
-   /* echo "<pre>";
-    print_r($_COOKIE); echo "</pre>";*/
-
 
 }
 mysql_close($db);

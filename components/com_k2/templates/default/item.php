@@ -45,6 +45,9 @@ print_r($_COOKIE); echo "</pre>";*/
             <span class="viewCntItem" title="Количество просмотров">
                 <?php echo $this->item->hits; ?>
             </span>
+			<span class="viewCntLikes">2</span>
+			<span class="viewCntReposts">2</span>
+			<span class="viewCntComments">8</span>
         <?php endif; ?>        
 
 	  <?php if($this->item->params->get('itemTitle')): ?>
@@ -245,12 +248,7 @@ print_r($_COOKIE); echo "</pre>";*/
 			);
 			$rows = mysql_fetch_assoc($selectSQL);
 ?>
-	  <div class="simpleVoteBlock">
-		  <div class="simpleVoteBlock interest <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
-		  <div class="simpleVoteBlock nInterest <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
-		  <div class="simpleVoteBlock actual <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="actual" data-id="<?=$this->item->id?>">Актуально (<?=$rows['actual']?>)</div>
-		  <div class="simpleVoteBlock notActual <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="not_actual" data-id="<?=$this->item->id?>">Не актуально (<?=$rows['not_actual']?>)</div>
-	  </div>
+
 
 	  <?php if(!empty($this->item->fulltext)): ?>
 	  <?php if($this->item->params->get('itemIntroText')): ?>
@@ -297,6 +295,14 @@ print_r($_COOKIE); echo "</pre>";*/
 
 	  <?php endif; ?>
 	 <div class="imgErrorPic"><img src="/images/errBlck.png"></div>
+
+	  <div class="simpleVoteBlockContainer">
+		  <div class="simpleVoteBlock interest <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
+		  <div class="simpleVoteBlock nInterest <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
+		  <div class="simpleVoteBlock actual <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="actual" data-id="<?=$this->item->id?>">Актуально (<?=$rows['actual']?>)</div>
+		  <div class="simpleVoteBlock notActual <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="not_actual" data-id="<?=$this->item->id?>">Не актуально (<?=$rows['not_actual']?>)</div>
+	  </div>
+
 		<?php if($this->item->params->get('itemHits') || ($this->item->params->get('itemDateModified') && intval($this->item->modified)!=0)): ?>
 		<div class="itemContentFooter">
 
@@ -322,9 +328,13 @@ print_r($_COOKIE); echo "</pre>";*/
 	  <div class="clr"></div>
   </div>
 
+
+	<div class="fb-comments" data-href="http://obyektiv.dev<?=$_SERVER['REQUEST_URI']?>" data-width="790" data-numposts="5"></div>
+
+
 	<div id="vk_comments"></div>
 	<script type="text/javascript">
-		VK.Widgets.Comments("vk_comments", {limit: 20, width: "790", attach: "*"});
+		VK.Widgets.Comments("vk_comments", {limit: 20, width: "790", attach: "*", autoPublish: 0});
 	</script>
 
 	<?php if($this->item->params->get('itemTwitterButton',1) || $this->item->params->get('itemFacebookButton',1) || $this->item->params->get('itemGooglePlusOneButton',1)): ?>
@@ -738,6 +748,9 @@ $db = mysql_connect("localhost","root","123");
 mysql_select_db("nep4uku_objektiv" ,$db);
 
 
+
+echo "<pre>";
+print_r($db); echo "</pre>";
     
 
     //Получим категорию новости, для формирования урла.
@@ -774,9 +787,8 @@ mysql_select_db("nep4uku_objektiv" ,$db);
         $date = date_create($rows["created"]);
         $rows["created"] = date_format($date, 'Y-m-d');
         $rows["image"] =  JURI::root(true).'/media/k2/items/cache/'.md5("Image".$rows["id"]).'_S.jpg';
-        $items[] = getCategory($rows, $db);    
+        $items[] = getCategory($rows, $db);
     }
-
 
 
 mysql_close($db);
@@ -790,7 +802,7 @@ mysql_close($db);
     <?foreach($items as $item):?>
         <div class="dib topNewsItem">
             <div class="topNewsItemPicture">
-                <img src="<?=$item["image"];?>" alt="<?=$item["title"];?>" />
+				<a href="<?=$item["parent_url"]."/".$item["alias"];?>"><img src="<?=$item["image"];?>" alt="<?=$item["title"]; ?> " style="height:auto;"/></a>
             </div>
             <div class="topNewsItemDescription">
                 <time><?=$item["created"];?></time>

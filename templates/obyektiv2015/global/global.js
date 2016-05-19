@@ -1,5 +1,11 @@
 //GLOBAL
 jQuery(document).ready(function ($) {
+
+	//Выравниваем фоточки топ новостей
+	$(".topNewsItemPicture img").each(function(){
+		$(this).css("margin-left", "-"+($(this).width() / 2)+"px");
+	});
+
 	//phone links attr
 	$('.js-g-phone-lnk').each(function () {
 		$(this).attr({
@@ -38,71 +44,82 @@ jQuery(document).ready(function ($) {
 	$('.js-g-dev-lnk').each(function () {
 		$(this).attr({
 			'target': '_blank',
-			'title': 'Разработка и продвижение сайтов в Севастополе и Крыму - growwweb.com'
+			//'title': 'Разработка и продвижение сайтов в Севастополе и Крыму - growwweb.com'
 		});
 	});
 
 	function userMessageError(){
+
 		var isCtrl = false;
+
 		$(document).keyup(function (e) {
 			if(e.which == 17) isCtrl=false;
 		}).keydown(function (e) {
+			var erLink = window.location.href;
+			var errText = window.getSelection().toString();
 			if(e.which == 17) isCtrl=true;
 			if(e.which == 13 && isCtrl == true) {
-				var erLink = window.location.href;
-				var errText = window.getSelection().toString();
+
 				$.ajax({
-					type:'post',
+					type:"POST",
 					url: '/ajax/erMailText.php',
 					data:{'errText':errText, 'erLink':erLink},
 					success: function(data){
-						alert('Спасибо, мы учтём Ваше замечание');
-						console.log(data);
+						alert('Спасибо за проявленную внимательность, мы обязательно рассмотрим ваше замечание.');
 					}
 				});
 			}
-				return false;
 		});
 	}
 
-	function user_prefers(){
+	function getFbVomments(){
 
-		$('.simpleVoteBlock').click(function() {
-			if ($(this).hasClass("enable")){
-				var dataValue = $(this).data();
-				var artID = dataValue.id;
-				var preferValue = dataValue.value;
-			console.log(preferValue);
+		var now_permalink = window.location.href;
+
+		jQuery.getJSON(
+			'https://graph.facebook.com/v2.1/?fields=share{comment_count}&id='+now_permalink,
+			function(data) {
+				if (!data['share']) {
+					return;
+				}
+				var count = data['share']['comment_count'];
+				jQuery('.viewCntComments').html(function(indx, oldHtml){
+					var allComments = parseInt(oldHtml) + parseInt(count);
+					return allComments;
+				});
+				//jQuery('.viewCntComments').html(count);
+			}
+		);
+	}
+
+
+	userMessageError();
+	user_prefers();
+	getFbVomments();
+
+});
+function user_prefers(){
+	$(document).on("click", ".simpleVoteBlock", function() {
+		var dataValue = $(this).data();
+		var artID = dataValue.id;
+		var preferValue = dataValue.value;
+		if ($(this).is(".enable")){
 			$.ajax({
 				type: 'post',
 				url: '/ajax/user_prefers.php',
 				data: {'artID': artID, 'preferValue': preferValue},
 				success: function (data) {
 					alert('Спасибо, мы ценим Ваше мнение');
-					$('.simpleVoteBlock').html(data);
+					$('.simpleVoteBlockContainer').html(data);
 				}
 			});
-			return false;
-			}
-		});
-	}
 
-	/*function onMainPollHide(iframe,content,div) {
-		alert("da");
-		//if (window.location.href == "http://obyektiv.press/") {
-		var iFrame = $(iframe).text();
-		console.log(iFrame);
-		var iFrameClear = iFrame.remove(content);
-		$(div).html(iFrameClear);
-		//}
-	};*/
-
-	//onMainPollHide('.pollRU','.poll-links','.vidgetPoll');
-	userMessageError();
-	user_prefers();
-
-});
-
+		} else {
+			alert("Вы уже голосовали");
+		}
+		return false;
+	});
+}
 function onMainCommentsHide(){
 	if (window.location.href == "http://obyektiv.press/") {
 		console.log(window.location.href);
@@ -111,4 +128,19 @@ function onMainCommentsHide(){
 }
 
 setTimeout(onMainCommentsHide, 3000);
-//setTimeout(onMainPollHide('iframe','.poll-links','.vidgetPoll'), 5000);
+jQuery(window).on("load", function(){
+
+	function countReposts() {
+		var countReps = 0;
+		$(".ya-share2__counter_visible").each(function () {
+			countReps = countReps + parseInt($(this).html());
+		});
+
+		$(".viewCntReposts").html(countReps);
+
+		return countReps;
+	}
+	countReposts();
+});
+
+
