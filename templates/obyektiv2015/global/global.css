@@ -242,16 +242,10 @@ div.contact {
     bottom: 0px; 
     color:#fff;
     font-size:13px;
-    background: url("/images/view.png") left top  no-repeat;
+    background: url("/images/views.png") left top  no-repeat;
     background-size:contain;
 }      
-.viewCntItem {
-    font-size:13px;
-    margin-left:10px;
-    background: url("/images/view.png") left top  no-repeat;
-    background-size:contain;
-    padding-left:23px;
-}
+
 div.itemHeader span.itemDateCreated, div.catItemHeader span.catItemDateCreated {
     font-size:13px;
 }
@@ -521,20 +515,69 @@ span.ya-share2__counter.ya-share2__counter_visible {
     background-image: url("/images/social/yt.png");
 }
 
-.viewCntLikes{
-    background: url("/images/like.png") left top no-repeat;
-    background-size: contain;
-    padding-left: 23px;
+
+.infoUsrBlck{
+    padding-left: 19px;
+    display: inline-block;
+    margin-left: 19px;
+    height: 18px;
+    color:#fff;
+    font-size:13px;
 }
 
-.viewCntReposts{
-    background: url("/images/repost.png") left top no-repeat;
-    background-size: contain;
-    padding-left: 23px;
+.viewCntItem {
+    background: url("/images/views.png") no-repeat;
+    padding-left:22px;
+    width: 19px;
+    background-position-y: 6px;
+}
+
+.viewCntLikes{
+    background: url("/images/likes.png")  no-repeat;
+    width: 17px;
+    background-position-y: 3px;
+    margin-left: 35px;
+}
+
+.viewCntReposts {
+    background: url("/images/reposts.png")  no-repeat;
+    width: 16px;
+    background-position-y: 2px;
+    margin-left: 20px;
 }
 
 .viewCntComments{
-    background: url("/images/comment.png") left top no-repeat;
-    background-size: contain;
-    padding-left: 23px;
+    background: url("/images/comments.png") no-repeat;
+    width: 16px;
+    background-position-y: 6px;
+    margin-left: 20px;
 }
+
+.darkThemeBclk{
+    color:#fff;
+    font-size:13px;
+    margin-left: 175px;
+    margin-top: -21px;
+}
+
+
+.darkThemeView {
+    background: url("/images/darkViews.png") no-repeat;
+    background-position-y: 3px;
+}
+.darkThemeLike {
+    background: url("/images/darkLikes.png") no-repeat;
+    margin-left: 30px;
+}
+.darkThemeRepost {
+    background: url("/images/darkReposts.png") no-repeat;
+}
+.darkThemeComment {
+    background: url("/images/darkComments.png") no-repeat;
+    background-position-y: 2px;
+}
+.bottomCntViews{
+    background-position-y: 3px;
+}
+
+

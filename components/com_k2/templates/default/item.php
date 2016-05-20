@@ -42,12 +42,12 @@ print_r($_COOKIE); echo "</pre>";*/
 		<?php endif; ?>
         
         <?php if($this->item->params->get('itemHits')): ?>   
-            <span class="viewCntItem" title="Количество просмотров">
+            <div class="viewCntItem infoUsrBlck" title="Количество просмотров">
                 <?php echo $this->item->hits; ?>
-            </span>
-			<span class="viewCntLikes">2</span>
-			<span class="viewCntReposts">2</span>
-			<span class="viewCntComments">8</span>
+            </div>
+			<div class="viewCntLikes infoUsrBlck" title="Количество лайков">2</div>
+			<div class="viewCntReposts infoUsrBlck" title="Количество репостов">2</div>
+			<div class="viewCntComments infoUsrBlck" title="Количество комментариев">8</div>
         <?php endif; ?>        
 
 	  <?php if($this->item->params->get('itemTitle')): ?>
@@ -749,8 +749,7 @@ mysql_select_db("nep4uku_objektiv" ,$db);
 
 
 
-echo "<pre>";
-print_r($db); echo "</pre>";
+
     
 
     //Получим категорию новости, для формирования урла.
@@ -790,7 +789,8 @@ print_r($db); echo "</pre>";
         $items[] = getCategory($rows, $db);
     }
 
-
+echo "<pre>";
+print_r(mysql_fetch_assoc($sql)); echo "</pre>";
 mysql_close($db);
 ?>
 
@@ -806,7 +806,7 @@ mysql_close($db);
             </div>
             <div class="topNewsItemDescription">
                 <time><?=$item["created"];?></time>
-                <span class="viewCntItem"><?=$item["hits"];?></span>
+                <span class="viewCntItem bottomCntViews"><?=$item["hits"];?></span>
             </div>
             <div class="topNewsHideText"><a href="<?=$item["parent_url"]."/".$item["alias"];?>"><?=$item["title"];?></a></div>
         </div>

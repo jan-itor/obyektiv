@@ -2,9 +2,9 @@
 
 if(sizeof($_POST) > 0){
 
-    $db = mysql_connect("localhost","root","123");
+    $db = mysql_connect("localhost","nep4uku_objektiv","0dafs2ls");
     mysql_select_db("nep4uku_objektiv" ,$db);
-    $id = $_POST['artID'];
+    $id = intval($_POST['artID']);
 
     $selectSQL = mysql_query(
         "SELECT *
@@ -14,6 +14,7 @@ if(sizeof($_POST) > 0){
     );
 
     if ($rows = mysql_fetch_assoc($selectSQL)) {
+        $rows[$_POST['preferValue']]++;
         $fieldPrefer = $_POST['preferValue'];
         $updateSQL = mysql_query(
             "UPDATE stobj_user_prefer
@@ -27,16 +28,22 @@ if(sizeof($_POST) > 0){
             "INSERT INTO stobj_user_prefer (`art_id`, `$fieldPreferValue`)
             VALUES ($fieldPreferArtID, 1)"
         );
+        $rows['interest'] = 0;
+        $rows['not_interest'] = 0;
+        $rows['actual'] = 0;
+        $rows['not_actual'] = 0;
+        $rows[$fieldPreferValue] = 1;
     }
 
 
 
     $_COOKIE["articles"][$id] = $id;
-    $array = $_COOKIE["articles"];
-    setcookie("articles", $array, time() + 360000);
+    setcookie("articles[".$id."]", $id, time() + 360000, "/");
+
 
 }
 mysql_close($db);
+
 ?>
 <div class="simpleVoteBlock interest" data-value="interest" data-id="<?=$_POST['artID']?>">Интересно (<?=$rows['interest']?>)</div>
 <div class="simpleVoteBlock nInterest" data-value="not_interest" data-id="<?=$_POST['artID']?>">Не интересно (<?=$rows['not_interest']?>)</div>
