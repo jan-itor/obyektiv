@@ -72,9 +72,9 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
-	function getFbVomments(now_permalink){
+	function getFbVomments(){
 
-		//var now_permalink = window.location.href;
+		var now_permalink = window.location.href;
 
 		jQuery.getJSON(
 			'https://graph.facebook.com/v2.1/?fields=share{comment_count}&id='+now_permalink,
@@ -103,11 +103,12 @@ function user_prefers(){
 		var dataValue = $(this).data();
 		var artID = dataValue.id;
 		var preferValue = dataValue.value;
-		if ($(this).is(".enable")){
+		var preferType = dataValue.type;
+		if (preferType){
 			$.ajax({
 				type: 'post',
 				url: '/ajax/user_prefers.php',
-				data: {'artID': artID, 'preferValue': preferValue},
+				data: {'artID': artID, 'preferValue': preferValue, 'preferType': preferType},
 				success: function (data) {
 					//alert('Спасибо, мы ценим Ваше мнение');
 					$('.simpleVoteBlockContainer').html(data);

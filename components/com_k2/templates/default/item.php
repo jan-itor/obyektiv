@@ -6,7 +6,6 @@
  * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
-
 // no direct access
 defined('_JEXEC') or die;
 
@@ -297,10 +296,10 @@ print_r($_COOKIE); echo "</pre>";*/
 	 <div class="imgErrorPic"><img src="/images/errBlck.png"></div>
 
 	  <div class="simpleVoteBlockContainer">
-		  <div class="simpleVoteBlock interest <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
-		  <div class="simpleVoteBlock nInterest <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
-		  <div class="simpleVoteBlock actual <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="actual" data-id="<?=$this->item->id?>">Актуально (<?=$rows['actual']?>)</div>
-		  <div class="simpleVoteBlock notActual <?if(!in_array($id,$_COOKIE['articles'])) echo "enable"?>" data-value="not_actual" data-id="<?=$this->item->id?>">Не актуально (<?=$rows['not_actual']?>)</div>
+		  <div class="simpleVoteBlock interest" <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
+		  <div class="simpleVoteBlock nInterest"  <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
+		  <div class="simpleVoteBlock actual" <?if(!in_array($id.'relevance',$_COOKIE['articles'])) echo "data-type = 'relevance'"?> data-value="actual" data-id="<?=$this->item->id?>">Актуально (<?=$rows['actual']?>)</div>
+		  <div class="simpleVoteBlock notActual" <?if(!in_array($id.'relevance',$_COOKIE['articles'])) echo "data-type = 'relevance'"?> data-value="not_actual" data-id="<?=$this->item->id?>">Не актуально (<?=$rows['not_actual']?>)</div>
 	  </div>
 
 		<?php if($this->item->params->get('itemHits') || ($this->item->params->get('itemDateModified') && intval($this->item->modified)!=0)): ?>

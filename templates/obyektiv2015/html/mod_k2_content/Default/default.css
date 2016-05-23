@@ -1,7 +1,7 @@
 .post {}
 
 .pd_left {
-    padding-left:10px;
+	padding-left:10px;
 }
 
 .post__lnk {
@@ -51,9 +51,9 @@
 	transition: .3s;
 }
 .post__title span {
-    overflow: hidden;
-    height: 74px;
-    display:block;
+	overflow: hidden;
+	height: 74px;
+	display:block;
 }
 .post__lnk:hover .post__title {
 	background-color: rgba(7, 80, 149, 0.75);
@@ -112,7 +112,6 @@
 
 #k2ModuleBox99 {
 	overflow: hidden;
-	height: 1219px;
 }
 
 #k2ModuleBox99 .post {
@@ -157,7 +156,7 @@
 }
 
 #k2Container {
-	overflow: hidden;
+
 	border: 4em solid #fff;
 	background-color: #fff;
 	/*-webkit-box-shadow: 0 0 5px 0 rgba(62, 62, 61, 0.16);
@@ -357,76 +356,75 @@ span.pagenav {
 	display: none;
 }
 .alg_video_item {
-    width: 49%;
-    display: inline-block;    
-    margin-left: 7px;
-    position: relative;
+	width: 49%;
+	display: inline-block;
+	margin-right: 6px;
+	margin-top: 7px;
+	position: relative;
 }
 .alg_video_item .alg_vide_play_icon:after {
-    content:"";
-    width:70px;
-    height: 70px;
-    background: url("/templates/obyektiv2015/icons/icon_play.png") no-repeat;
-    background-size:cover;
-    position: absolute;
-    left:50%;
-    top:25%;
-    margin-left:-35px;
-    cursor: pointer;
-    z-index:0;
-    opacity: 0.8;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;    
-    transition: .3s;
+	content:"";
+	width:70px;
+	height: 70px;
+	background: url("/templates/obyektiv2015/icons/icon_play.png") no-repeat;
+	background-size:cover;
+	position: absolute;
+	left:50%;
+	top:25%;
+	margin-left:-35px;
+	cursor: pointer;
+	z-index:0;
+	opacity: 0.8;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
 
 }
 .alg_video_item:hover .alg_vide_play_icon:after {
-    content:"";
-    width:100px;
-    height: 100px;
-    background: url("/templates/obyektiv2015/icons/icon_play.png") no-repeat;
-    background-size:cover;
-    position: absolute;
-    left:50%;
-    top:21%;
-    margin-left:-50px;
-    cursor: pointer;
-    z-index:0;
-    opacity: 0.8;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
-    -o-transition: .2s;    
-    transition: .2s;    
+	content:"";
+	width:100px;
+	height: 100px;
+	background: url("/templates/obyektiv2015/icons/icon_play.png") no-repeat;
+	background-size:cover;
+	position: absolute;
+	left:50%;
+	top:21%;
+	margin-left:-50px;
+	cursor: pointer;
+	z-index:0;
+	opacity: 0.8;
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-o-transition: .2s;
+	transition: .2s;
 }
 .alg_video_item:first-child {
-    margin-left:0px;
+	margin-left:0px;
 }
 .alg_all_video {
-    padding: 0 40px;
-	margin: 320px;
-    background-color: #075095;
-    color: #fff;
-    line-height: 40px;
-    display: block;
-    width: 190px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;    
+	padding: 0 40px;
+	background-color: #075095;
+	color: #fff;
+	line-height: 40px;
+	display: block;
+	width: 190px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	clear: both;
 }
 .video_block_home {
-    position: relative;
+	position: relative;
 }
 
-.alg_video_items{
-	margin-left: 320px;
-}
+
 
 .vidgetPoll {
 	position: absolute;
-	top: 68%;
+	margin-top: 28px;
 	left: 10px;
 	z-index: 1000;
 }
