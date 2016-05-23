@@ -357,10 +357,12 @@ span.pagenav {
 }
 .alg_video_item {
 	width: 49%;
+	margin-top: 15px;
 	display: inline-block;
-	margin-right: 6px;
-	margin-top: 7px;
 	position: relative;
+}
+.alg_video_item:nth-child(odd) {
+	padding-right:10px;
 }
 .alg_video_item .alg_vide_play_icon:after {
 	content:"";
@@ -399,9 +401,7 @@ span.pagenav {
 	-o-transition: .2s;
 	transition: .2s;
 }
-.alg_video_item:first-child {
-	margin-left:0px;
-}
+
 .alg_all_video {
 	padding: 0 40px;
 	background-color: #075095;

@@ -402,6 +402,8 @@ nobr#stl_text {
 }
 #k2ModuleBox108 {
     /*margin-top:26px;*/
+    position: relative;
+    left: 14px;
 }
 iframe.pollRU {
     height: 500px;
@@ -479,4 +481,16 @@ iframe.pollRU {
 
 .bottomCntViews{
     background-position-y: 3px;
+}
+.grid__item.grid__item--big .k2ItemsBlock#k2ModuleBox108 ul li {
+    width:49% !important;
+    display: inline-block !important;;
+    float:none !important;;
+    vertical-align: top !important;;
+}
+
+.alg_video_items {
+    position: relative;
+    bottom: 25px;
+    left: 14px;
 }
