@@ -295,6 +295,15 @@ print_r($_COOKIE); echo "</pre>";*/
 	  <?php endif; ?>
 	 <div class="imgErrorPic"><img src="/images/errBlck.png"></div>
 
+	  <?php if($this->item->params->get('itemImageGallery') && !empty($this->item->gallery)): ?>
+		  <!-- Item image gallery -->
+		  <a name="itemImageGalleryAnchor" id="itemImageGalleryAnchor"></a>
+		  <div class="itemImageGallery">
+			  <h3><?php echo JText::_('K2_IMAGE_GALLERY'); ?></h3>
+			  <?php echo $this->item->gallery; ?>
+		  </div>
+	  <?php endif; ?>
+
 	  <div class="simpleVoteBlockContainer">
 		  <div class="simpleVoteBlock interest" <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
 		  <div class="simpleVoteBlock nInterest"  <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
@@ -590,14 +599,6 @@ print_r($_COOKIE); echo "</pre>";*/
   </div>
   <?php endif; ?>
 
-  <?php if($this->item->params->get('itemImageGallery') && !empty($this->item->gallery)): ?>
-  <!-- Item image gallery -->
-  <a name="itemImageGalleryAnchor" id="itemImageGalleryAnchor"></a>
-  <div class="itemImageGallery">
-	  <h3><?php echo JText::_('K2_IMAGE_GALLERY'); ?></h3>
-	  <?php echo $this->item->gallery; ?>
-  </div>
-  <?php endif; ?>
 
   <?php if($this->item->params->get('itemNavigation') && !JRequest::getCmd('print') && (isset($this->item->nextLink) || isset($this->item->previousLink))): ?>
   <!-- Item navigation -->

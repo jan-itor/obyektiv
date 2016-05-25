@@ -291,7 +291,7 @@ div.itemVideoBlock {margin:0 0 16px 0;padding:16px;background:#010101 url(../ima
 	div.itemVideoBlock span.itemVideoCredits {color:#eee;float:right;display:block;font-style:italic;font-size:11px;width:35%;text-align:right;}
 
 /* Image Gallery */
-div.itemImageGallery {margin:0 0 16px 0;padding:0;}
+div.itemImageGallery {margin:0 0 16px 0;padding:0; margin-left: 95px;}
 
 /* Article navigation */
 div.itemNavigation {padding:4px 8px;margin:0 0 24px 0;border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;background:#fffff0;}
