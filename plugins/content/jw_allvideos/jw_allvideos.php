@@ -105,7 +105,7 @@ class plgContentJw_allvideos extends JPlugin {
 		$alightcolor 					= $pluginParams->get('alightcolor','#00ADE3');
 		$allowAudioDownloading			= $pluginParams->get('allowAudioDownloading',0);
 		/* Global Parameters */
-		$autoplay 						= ($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay',0);
+		$autoplay 						= 0;//($params->get('autoplay')) ? $params->get('autoplay') : $pluginParams->get('autoplay',0);
 		/* Performance Parameters */
 		$gzipScripts					= $pluginParams->get('gzipScripts',0);
 		/* Advanced */
@@ -247,9 +247,9 @@ class plgContentJw_allvideos extends JPlugin {
 						$tagsource = $tagsourceDailymotion[0];
 						if ($final_autoplay=='true') {
 							if (strpos($tagsource,'?')!==false) {
-								$tagsource = $tagsource.'&amp;autoPlay=1';
+								$tagsource = $tagsource.'&amp;autoPlay=0';
 							} else {
-								$tagsource = $tagsource.'?autoPlay=1';
+								$tagsource = $tagsource.'?autoPlay=0';
 							}
 						}
 					}

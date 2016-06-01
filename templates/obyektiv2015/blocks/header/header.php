@@ -1,8 +1,6 @@
-<?
-if ($_SERVER["REMOTE_ADDR"] == "194.12.124.17") {?>
-    <div class="left_anchor_full"> <nobr id="stl_text" class="">Наверх</nobr></div>
-<?}?>
 
+
+    <div class="left_anchor_full"> <nobr id="stl_text" class=""><div class="left_anchor_img"></div>Наверх</nobr></div>
 
 <!--HEADER-->
 <header class="header">
@@ -157,3 +155,11 @@ if ($_SERVER["REMOTE_ADDR"] == "194.12.124.17") {?>
     </nav>
 <?endif;*/?>
 </header>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.6&appId=1527600314216580";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>

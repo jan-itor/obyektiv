@@ -6,10 +6,11 @@
  * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
-
 // no direct access
 defined('_JEXEC') or die;
 
+/*echo "<pre>";
+print_r($_COOKIE); echo "</pre>";*/
 ?>
 
 <?php if(JRequest::getInt('print')==1): ?>
@@ -40,9 +41,12 @@ defined('_JEXEC') or die;
 		<?php endif; ?>
         
         <?php if($this->item->params->get('itemHits')): ?>   
-            <span class="viewCntItem" title="Количество просмотров">
+            <div class="viewCntItem infoUsrBlck" title="Количество просмотров">
                 <?php echo $this->item->hits; ?>
-            </span>
+            </div>
+			<div class="viewCntLikes infoUsrBlck" title="Количество лайков">2</div>
+			<div class="viewCntReposts infoUsrBlck" title="Количество репостов">2</div>
+			<div class="viewCntComments infoUsrBlck" title="Количество комментариев">8</div>
         <?php endif; ?>        
 
 	  <?php if($this->item->params->get('itemTitle')): ?>
@@ -180,7 +184,6 @@ defined('_JEXEC') or die;
 		<div class="clr"></div>
   </div>
 	<?php endif; ?>
-
 	<?php if($this->item->params->get('itemRating')): ?>
 	<!-- Item Rating -->
 	<div class="itemRatingBlock">
@@ -231,6 +234,20 @@ defined('_JEXEC') or die;
 		  <div class="clr"></div>
 	  </div>
 	  <?php endif; ?>
+<?// Джумла параша, поэтому - прямые запросы(не забыть на баевом поменять на боевом!!!!)
+			$db = mysql_connect("localhost","root","123");
+			  mysql_select_db("nep4uku_objektiv" ,$db);
+				$id = $this->item->id;
+
+			$selectSQL = mysql_query(
+			"SELECT *
+       		 FROM stobj_user_prefer
+        	WHERE art_id = $id
+       		 "
+			);
+			$rows = mysql_fetch_assoc($selectSQL);
+?>
+
 
 	  <?php if(!empty($this->item->fulltext)): ?>
 	  <?php if($this->item->params->get('itemIntroText')): ?>
@@ -274,7 +291,25 @@ defined('_JEXEC') or die;
 			</ul>
 	    <div class="clr"></div>
 	  </div>
+
 	  <?php endif; ?>
+	 <div class="imgErrorPic"><img src="/images/errBlck.png"></div>
+
+	  <?php if($this->item->params->get('itemImageGallery') && !empty($this->item->gallery)): ?>
+		  <!-- Item image gallery -->
+		  <a name="itemImageGalleryAnchor" id="itemImageGalleryAnchor"></a>
+		  <div class="itemImageGallery">
+			  <h3><?php echo JText::_('K2_IMAGE_GALLERY'); ?></h3>
+			  <?php echo $this->item->gallery; ?>
+		  </div>
+	  <?php endif; ?>
+
+	  <div class="simpleVoteBlockContainer">
+		  <div class="simpleVoteBlock interest" <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
+		  <div class="simpleVoteBlock nInterest"  <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
+		  <div class="simpleVoteBlock actual" <?if(!in_array($id.'relevance',$_COOKIE['articles'])) echo "data-type = 'relevance'"?> data-value="actual" data-id="<?=$this->item->id?>">Актуально (<?=$rows['actual']?>)</div>
+		  <div class="simpleVoteBlock notActual" <?if(!in_array($id.'relevance',$_COOKIE['articles'])) echo "data-type = 'relevance'"?> data-value="not_actual" data-id="<?=$this->item->id?>">Не актуально (<?=$rows['not_actual']?>)</div>
+	  </div>
 
 		<?php if($this->item->params->get('itemHits') || ($this->item->params->get('itemDateModified') && intval($this->item->modified)!=0)): ?>
 		<div class="itemContentFooter">
@@ -300,7 +335,16 @@ defined('_JEXEC') or die;
 
 	  <div class="clr"></div>
   </div>
-    
+
+
+	<div class="fb-comments" data-href="http://obyektiv.dev<?=$_SERVER['REQUEST_URI']?>" data-width="790" data-numposts="5"></div>
+
+
+	<div id="vk_comments"></div>
+	<script type="text/javascript">
+		VK.Widgets.Comments("vk_comments", {limit: 20, width: "790", attach: "*", autoPublish: 0});
+	</script>
+
 	<?php if($this->item->params->get('itemTwitterButton',1) || $this->item->params->get('itemFacebookButton',1) || $this->item->params->get('itemGooglePlusOneButton',1)): ?>
 	<!-- Social sharing -->
 	<div class="itemSocialSharing">
@@ -555,14 +599,6 @@ defined('_JEXEC') or die;
   </div>
   <?php endif; ?>
 
-  <?php if($this->item->params->get('itemImageGallery') && !empty($this->item->gallery)): ?>
-  <!-- Item image gallery -->
-  <a name="itemImageGalleryAnchor" id="itemImageGalleryAnchor"></a>
-  <div class="itemImageGallery">
-	  <h3><?php echo JText::_('K2_IMAGE_GALLERY'); ?></h3>
-	  <?php echo $this->item->gallery; ?>
-  </div>
-  <?php endif; ?>
 
   <?php if($this->item->params->get('itemNavigation') && !JRequest::getCmd('print') && (isset($this->item->nextLink) || isset($this->item->previousLink))): ?>
   <!-- Item navigation -->
@@ -704,10 +740,14 @@ defined('_JEXEC') or die;
 //Короче, я джумлу не шарю и вообще ненавижу её, по этобу буду ручками всё тянуть из бд
 //Итак, задача: вывести топ просматреваемых статей за последних 7 дней
 
-//Подключимся к БД
-$db = mysql_connect("localhost","nep4uku_objektiv","0dafs2ls");
+//Подключимся к БД (не забыть на боевом поменя настройки подключения к БД!!!!!!)
+
+//$db = mysql_connect("localhost","nep4uku_objektiv","0dafs2ls");
+$db = mysql_connect("localhost","root","123");
 //Выберем табличку
 mysql_select_db("nep4uku_objektiv" ,$db);
+
+
 
 
     
@@ -736,38 +776,43 @@ mysql_select_db("nep4uku_objektiv" ,$db);
     FROM stobj_k2_items 
     WHERE `published` = 1 AND `catid` > 0 AND `trash` = 0 AND `created` > NOW() - INTERVAL 7 DAY
     ORDER BY  `stobj_k2_items`.`hits` DESC 
-    LIMIT 0 , 8"
+    LIMIT 0 , 12"
     );
-    
+
+
+
     while ($rows = mysql_fetch_assoc($sql))
     {   
         $date = date_create($rows["created"]);
         $rows["created"] = date_format($date, 'Y-m-d');
         $rows["image"] =  JURI::root(true).'/media/k2/items/cache/'.md5("Image".$rows["id"]).'_S.jpg';
-        $items[] = getCategory($rows, $db);    
+        $items[] = getCategory($rows, $db);
     }
 
-
-
-mysql_close($db);    
+echo "<pre>";
+print_r(mysql_fetch_assoc($sql)); echo "</pre>";
+mysql_close($db);
 ?>
+
 <?if (sizeof($items) > 0):?>
+	<div class="topNewsWrap">
     <div class="itemNavigation">
           <span class="itemNavigationTitle">Популярные новости:</span>
     </div>
     <?foreach($items as $item):?>
         <div class="dib topNewsItem">
             <div class="topNewsItemPicture">
-                <img src="<?=$item["image"];?>" alt="<?=$item["title"];?>" />
+				<a href="<?=$item["parent_url"]."/".$item["alias"];?>"><img src="<?=$item["image"];?>" alt="<?=$item["title"]; ?> " style="height:auto;"/></a>
             </div>
             <div class="topNewsItemDescription">
                 <time><?=$item["created"];?></time>
-                <span class="viewCntItem"><?=$item["hits"];?></span>            
+                <span class="viewCntItem bottomCntViews"><?=$item["hits"];?></span>
             </div>
-            <div><a href="<?=$item["parent_url"]."/".$item["alias"];?>"><?=$item["title"];?></a></div>
+            <div class="topNewsHideText"><a href="<?=$item["parent_url"]."/".$item["alias"];?>"><?=$item["title"];?></a></div>
         </div>
     <?endforeach;?>
 <?endif;?>
+	</div>
 	<div class="clr"></div>
 </div>
 
