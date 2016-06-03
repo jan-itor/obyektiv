@@ -9,8 +9,6 @@
 // no direct access
 defined('_JEXEC') or die;
 
-/*echo "<pre>";
-print_r($_COOKIE); echo "</pre>";*/
 ?>
 
 <?php if(JRequest::getInt('print')==1): ?>
@@ -234,7 +232,7 @@ print_r($_COOKIE); echo "</pre>";*/
 		  <div class="clr"></div>
 	  </div>
 	  <?php endif; ?>
-<?// Джумла параша, поэтому - прямые запросы(не забыть на баевом поменять на боевом!!!!)
+<?// Джумла параша, поэтому - прямые запросы(не забыть на  поменять на боевом!!!!)
 			$db = mysql_connect("localhost","root","123");
 			  mysql_select_db("nep4uku_objektiv" ,$db);
 				$id = $this->item->id;
@@ -304,11 +302,38 @@ print_r($_COOKIE); echo "</pre>";*/
 		  </div>
 	  <?php endif; ?>
 
+	  <?php if($this->item->params->get('itemVideo') && !empty($this->item->video)): ?>
+		  <!-- Item video -->
+		  <a name="itemVideoAnchor" id="itemVideoAnchor"></a>
+
+		  <div class="itemVideoBlock">
+			  <h3><?php echo JText::_('K2_MEDIA'); ?></h3>
+
+			  <?php if($this->item->videoType=='embedded'): ?>
+				  <div class="itemVideoEmbedded">
+					  <?php echo $this->item->video; ?>
+				  </div>
+			  <?php else: ?>
+				  <span class="itemVideo"><?php echo $this->item->video; ?></span>
+			  <?php endif; ?>
+
+			  <?php if($this->item->params->get('itemVideoCaption') && !empty($this->item->video_caption)): ?>
+				  <span class="itemVideoCaption"><?php echo $this->item->video_caption; ?></span>
+			  <?php endif; ?>
+
+			  <?php if($this->item->params->get('itemVideoCredits') && !empty($this->item->video_credits)): ?>
+				  <span class="itemVideoCredits"><?php echo $this->item->video_credits; ?></span>
+			  <?php endif; ?>
+
+			  <div class="clr"></div>
+		  </div>
+	  <?php endif; ?>
+
 	  <div class="simpleVoteBlockContainer">
 		  <div class="simpleVoteBlock interest" <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="interest" data-id="<?=$this->item->id?>">Интересно (<?=$rows['interest']?>)</div>
-		  <div class="simpleVoteBlock nInterest"  <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
 		  <div class="simpleVoteBlock actual" <?if(!in_array($id.'relevance',$_COOKIE['articles'])) echo "data-type = 'relevance'"?> data-value="actual" data-id="<?=$this->item->id?>">Актуально (<?=$rows['actual']?>)</div>
 		  <div class="simpleVoteBlock notActual" <?if(!in_array($id.'relevance',$_COOKIE['articles'])) echo "data-type = 'relevance'"?> data-value="not_actual" data-id="<?=$this->item->id?>">Не актуально (<?=$rows['not_actual']?>)</div>
+		  <div class="simpleVoteBlock nInterest"  <?if(!in_array($id.'like',$_COOKIE['articles'])) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$this->item->id?>">Не интересно (<?=$rows['not_interest']?>)</div>
 	  </div>
 
 		<?php if($this->item->params->get('itemHits') || ($this->item->params->get('itemDateModified') && intval($this->item->modified)!=0)): ?>
@@ -571,34 +596,6 @@ print_r($_COOKIE); echo "</pre>";*/
 	<?php endif; ?>
 
 	<div class="clr"></div>
-
-  <?php if($this->item->params->get('itemVideo') && !empty($this->item->video)): ?>
-  <!-- Item video -->
-  <a name="itemVideoAnchor" id="itemVideoAnchor"></a>
-
-  <div class="itemVideoBlock">
-  	<h3><?php echo JText::_('K2_MEDIA'); ?></h3>
-
-		<?php if($this->item->videoType=='embedded'): ?>
-		<div class="itemVideoEmbedded">
-			<?php echo $this->item->video; ?>
-		</div>
-		<?php else: ?>
-		<span class="itemVideo"><?php echo $this->item->video; ?></span>
-		<?php endif; ?>
-
-	  <?php if($this->item->params->get('itemVideoCaption') && !empty($this->item->video_caption)): ?>
-	  <span class="itemVideoCaption"><?php echo $this->item->video_caption; ?></span>
-	  <?php endif; ?>
-
-	  <?php if($this->item->params->get('itemVideoCredits') && !empty($this->item->video_credits)): ?>
-	  <span class="itemVideoCredits"><?php echo $this->item->video_credits; ?></span>
-	  <?php endif; ?>
-
-	  <div class="clr"></div>
-  </div>
-  <?php endif; ?>
-
 
   <?php if($this->item->params->get('itemNavigation') && !JRequest::getCmd('print') && (isset($this->item->nextLink) || isset($this->item->previousLink))): ?>
   <!-- Item navigation -->
