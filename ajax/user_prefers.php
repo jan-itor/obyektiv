@@ -44,7 +44,7 @@ mysql_close($db);
 
 ?>
 <div class="simpleVoteBlock interest " <?if(($_POST['preferType'] == "relevance") && (!in_array($id.'like',$_COOKIE['articles']))) echo "data-type = 'like'"?> data-value="interest" data-id="<?=$_POST['artID']?>">Интересно (<?=$rows['interest']?>)</div>
-<div class="simpleVoteBlock nInterest " <?if($_POST['preferType'] == "relevance" && (!in_array($id.'like',$_COOKIE['articles']))) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$_POST['artID']?>">Не интересно (<?=$rows['not_interest']?>)</div>
 <div class="simpleVoteBlock actual " <?if($_POST['preferType'] == "like" && (!in_array($id.'relevance',$_COOKIE['articles']))) echo "data-type = 'relevance'"?> data-value="actual" data-id="<?=$_POST['artID']?>">Актуально (<?=$rows['actual']?>)</div>
 <div class="simpleVoteBlock notActual " <?if($_POST['preferType'] == "like" && (!in_array($id.'relevance',$_COOKIE['articles']))) echo "data-type = 'relevance'"?> data-value="not_actual" data-id="<?=$_POST['artID']?>">Не актуально (<?=$rows['not_actual']?>)</div>
+<div class="simpleVoteBlock nInterest " <?if($_POST['preferType'] == "relevance" && (!in_array($id.'like',$_COOKIE['articles']))) echo "data-type = 'like'"?> data-value="not_interest" data-id="<?=$_POST['artID']?>">Не интересно (<?=$rows['not_interest']?>)</div>
 

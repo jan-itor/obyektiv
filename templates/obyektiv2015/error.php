@@ -1,3 +1,8 @@
+<?php
+header("HTTP/1.1 301 Moved Permanently");
+header("Location: http://obyektiv.press/404");
+?>
+<?/*
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
@@ -17,7 +22,7 @@
 <span class="orange">&lt;html&gt;</span>
     <span class="orange">&lt;style&gt;</span>
    * {
-            <span class="green">developer</span>:<span class="blue">growwweb.com</span>;
+            <span class="green">developer</span>:<span class="blue">growwweb.com(strange people)</span>;
                 <span class="green">site</span>:<span class="blue"><?php echo JFactory::getApplication()->getCfg('sitename'); ?></span>
 } 
      <span class="orange">&lt;/style&gt;</span>
@@ -280,3 +285,4 @@ span.green {
 
 </body>
 </html>
+?>
